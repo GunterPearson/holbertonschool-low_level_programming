@@ -1,6 +1,14 @@
 #include <stdlib.h>
 #include <time.h>
-/**
+/*
+ *0-positive_or_negative.c
+ *
+ * description:
+ * prints out if number executed
+ * is positive, negative or equal
+ */
+
+/*
  * main - Entry point
  *
  * Return: Always 0 (Success)
