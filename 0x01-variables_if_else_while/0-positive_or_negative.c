@@ -1,7 +1,8 @@
 #include <stdlib.h>
 #include <time.h>
+
 /*
- *0-positive_or_negative.c
+ * 0-positive_or_negative.c
  *
  * description:
  * prints out if number executed
@@ -9,21 +10,16 @@
  */
 
 /**
- * main - this is the main function where code starts
- * void: no arguments passed
+ * main - Entry point
  *
- * Return: 0 (Success)
+ * Return: Always 0 (Success)
  */
 int main(void)
-
 {
 
 	int n;
 
-
-
 	srand(time(0));
-
 	n = rand() - RAND_MAX / 2;
 	if (n > 0)
 		printf("%d is positive\n", n);
