@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  *main - starting point of command
  *puts -prints out string
