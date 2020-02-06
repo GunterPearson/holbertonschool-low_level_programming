@@ -5,8 +5,8 @@
  *puts -prints out string
  *return - 0 means success
  */
-int main(void)
+int main (void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
-		return(0);
+	return(0);
 }
