@@ -1,4 +1,4 @@
-#include <stdlib.h>
+B#include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
 /*
@@ -17,7 +17,7 @@
 int main(void)
 {
 	int d;
-	char nums;
+	int nums;
 
 	nums = '0';
 
