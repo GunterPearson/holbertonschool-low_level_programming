@@ -16,18 +16,18 @@
  */
 int main(void)
 {
-	int nums;
-	char c, d;
+	int d;
+	char nums;
 
-	c = ',';
-	d = ' ';
-	for (nums = '0'; nums <= '9'; nums++)
+	nums = '0';
+
+	for (d = 0; d <= 9; d++)
 	{
-		putchar(nums);
+		putchar(nums + d);
 		if (!(nums == 9))
 		{
-			putchar(c);
-			putchar(d);
+			putchar(',');
+			putchar(' ');
 		}
 	}
 	putchar('\n');
