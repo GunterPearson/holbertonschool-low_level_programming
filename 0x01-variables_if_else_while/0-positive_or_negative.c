@@ -8,10 +8,11 @@
  * is positive, negative or equal
  */
 
-/*
- * main - Entry point
+/**
+ * main - this is the main function where code starts
+ * void: no arguments passed
  *
- * Return: Always 0 (Success)
+ * Return: 0 (Success)
  */
 int main(void)
 
