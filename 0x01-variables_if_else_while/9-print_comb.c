@@ -21,10 +21,10 @@ int main(void)
 
 	nums = '0';
 
-	for (d = 0; d <= 9; d++)
+	for (d = 0; d < 10; d++)
 	{
 		putchar(nums + d);
-		if (!(nums == 9))
+		if (!(d == 9))
 		{
 			putchar(',');
 			putchar(' ');
