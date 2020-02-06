@@ -16,7 +16,7 @@
  */
 int main(void)
 {
-	char single;
+	int single;
 
 	single = '0';
 	for (single = '0'; single <= '9'; single++)
