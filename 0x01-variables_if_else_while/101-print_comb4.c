@@ -1,4 +1,4 @@
-#include <stdlib.h>
+B#include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
 /*
@@ -41,5 +41,5 @@ int main(void)
 		}
 	}
 	putchar('\n');
-	return(0);
+	return (0);
 }
