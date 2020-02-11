@@ -10,8 +10,8 @@
  */
 
 /**
- * _islower- start
- *
+ * print_sign- start
+ * @c: represents int value to be tested
  * Return: Always 0 (Success)
  */
 int print_sign(int c)
@@ -26,8 +26,8 @@ int print_sign(int c)
 		_putchar('0');
 		return (0);
 	}
-       	else
-       	{
+	else
+	{
 		_putchar('-');
 		return (-1);
 	}

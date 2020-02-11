@@ -9,7 +9,7 @@
  */
 
 /**
- * print_alphabet - start
+ * print_alphabet_x10 - start
  *
  * Return: Always 0 (Success)
  */

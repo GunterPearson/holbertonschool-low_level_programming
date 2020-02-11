@@ -2,21 +2,24 @@
 #include <stdio.h>
 #include "holberton.h"
 /*
- * 6-abs.c
+ * 7-last_digit.c
  *
  * description:
  * writes a function
  * that computes
- * absoulute value
+ * last digit
  */
 
 /**
  * print_last_digit- start
- *
+ * @c: represents int value to be tested
  * Return: Always 0 (Success)
  */
 int print_last_digit(int c)
 {
-	tail -n +1;
-	return (0);
+	c = c % 10;
+	if (c < 0)
+		c = -c;
+	_putchar('0' + (c));
+	return (c);
 }

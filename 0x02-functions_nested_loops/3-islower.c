@@ -10,13 +10,13 @@
 
 /**
  * _islower- start
- *
+ *@c: represents int value to be tested
  * Return: Always 0 (Success)
  */
 int _islower(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (1);
-       	else
-       		return (0);
+	else
+		return (0);
 }

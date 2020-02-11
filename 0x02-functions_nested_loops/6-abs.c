@@ -1,4 +1,4 @@
-#include <stdlib.h>
+B#include <stdlib.h>
 #include <stdio.h>
 #include "holberton.h"
 /*
@@ -11,8 +11,8 @@
  */
 
 /**
- * print_sign- start
- *
+ * _abs- start
+ * @c: represents int value to be tested
  * Return: Always 0 (Success)
  */
 int _abs(int c)

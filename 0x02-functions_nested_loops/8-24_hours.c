@@ -1,4 +1,4 @@
-#include <stdlib.h>
+B#include <stdlib.h>
 #include <stdio.h>
 #include "holberton.h"
 /*
@@ -11,7 +11,7 @@
  */
 
 /**
- * print_last_digit- start
+ * jack_bauer- start
  *
  * Return: Always 0 (Success)
  */
