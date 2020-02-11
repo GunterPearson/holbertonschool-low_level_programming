@@ -1,14 +1,4 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "holberton.h"
-/*
- * 9-times_table.c
- *
- * description:
- * writes a function
- * that computes
- * 9 time table
- */
 
 /**
  * times_table- start
@@ -17,14 +7,45 @@
  */
 void times_table(void)
 {
-	int i, j;
+	int row, col, x;
 
-	for (i = 0; i <= 9; i++)
+	for (row = 0; row <= 9; row++)
 	{
-		for (j = 0; j < 9; j++)
+		for (col = 0; col <= 9; col++)
 		{
-			_putchar(i + '0');
-			_putchar(j + '0');
+			if (col < 9)
+			{
+				x = row * col;
+				if (x < 10 && x >= 0)
+				{
+					_putchar(x + '0');
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+				}
+				else
+				{
+					_putchar(x / 10 + '0');
+					_putchar(x % 10 + '0');
+					_putchar(',');
+					_putchar(' ');
+				}
+			}
+			else
+			{
+				x = row * col;
+				if (x < 10 && x >= 0)
+				{
+					_putchar(x + '0');
+					_putchar('\n');
+				}
+				else
+				{
+					_putchar(x / 10 + '0');
+					_putchar(x % 10 + '0');
+					_putchar('\n');
+				}
+			}
 		}
 	}
 }
