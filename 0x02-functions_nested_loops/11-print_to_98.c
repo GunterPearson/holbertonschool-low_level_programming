@@ -11,25 +11,42 @@
  */
 
 /**
- * times_table- start
+ * print_to_98- start
  * @n -placeholder for int
  *
  * Return: Always 0 (Success)
  */
 void print_to_98(int n)
 {
-	int a, c, sum;
+	int a;
 
 	if (n <= 98)
 	{
-		sum = n + 98;
-		a = sum - 98;
-		for (c = a; c <= 98; c++)
+		for (a = n; a < 99; a++)
 		{
-			_putchar(c);
-			_putchar(',');
-			_putchar(' ');
+			if (a != 98)
+			{
+				printf("%i, ", a);
+			}
+		       	else
+			{
+				printf("%i\n", a);
+			}
 		}
-		_putchar('\n');
+	}
+	if (n >= 98)
+	{
+		for (a = n; a >= 98; a--)
+		{
+                        if (a != 98)
+                        {
+				printf("%i, ", a);
+			}
+			else
+			{
+				printf("%i\n", a);
+
+			}
+		}
 	}
 }
