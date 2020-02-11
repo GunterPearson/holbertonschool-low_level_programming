@@ -10,7 +10,7 @@
 
 /**
  * _islower- start
- *@c: represents int value to be tested
+ * @c: represents int value to be tested
  * Return: Always 0 (Success)
  */
 int _islower(int c)
