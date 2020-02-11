@@ -11,9 +11,9 @@
  */
 
 /**
- * times_table- start
- * @a -placeholder for int
- * @b -placeholder for int2
+ * add- start
+ * @a: placeholder for int
+ * @b: placeholder for int2
  * Return: Always 0 (Success)
  */
 int add(int a, int b)
