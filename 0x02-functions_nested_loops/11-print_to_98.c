@@ -1,4 +1,4 @@
-#include <stdlib.h>
+B#include <stdlib.h>
 #include <stdio.h>
 #include "holberton.h"
 /*
@@ -12,7 +12,7 @@
 
 /**
  * print_to_98- start
- * @n -placeholder for int
+ * @n: placeholder for int
  *
  * Return: Always 0 (Success)
  */
@@ -28,7 +28,7 @@ void print_to_98(int n)
 			{
 				printf("%i, ", a);
 			}
-		       	else
+			else
 			{
 				printf("%i\n", a);
 			}
@@ -38,8 +38,8 @@ void print_to_98(int n)
 	{
 		for (a = n; a >= 98; a--)
 		{
-                        if (a != 98)
-                        {
+			if (a != 98)
+			{
 				printf("%i, ", a);
 			}
 			else
