@@ -24,13 +24,8 @@ int main(void)
 	{
 		if (i % 3 == 0 || i % 5 == 0)
 		{
-			if (i != 1023)
-			{
-				printf("%i, ", i);
-				
-			}
-			else
-				printf("%i\n", i);
+			j += i;
 		}
 	}
+	printf("%i\n", j);
 }
