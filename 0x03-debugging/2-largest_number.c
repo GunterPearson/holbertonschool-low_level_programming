@@ -1,4 +1,4 @@
-#include "holberton.h"
+B#include "holberton.h"
 
 /**
  * largest_number - returns the largest of 3 numbers
@@ -22,7 +22,7 @@ int largest_number(int a, int b, int c)
 	}
 	else if (a == b && a > c)
 	{
-		larg = a,b;
+		larg = a, b;
 	}
 	else
 	{
