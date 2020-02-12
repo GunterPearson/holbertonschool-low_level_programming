@@ -22,10 +22,10 @@ int main(void)
 
 	for (i = 1; i < 1025; i++)
 	{
-		if (i % 3 == 0 || i % 5 == 0)
-		{
+		if (i % 3 == 0)
 			j += i;
-		}
+		else if (i % 5 == 0)
+			j += i;
 	}
 	printf("%i\n", j);
 }
