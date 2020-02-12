@@ -1,51 +1,49 @@
 #include "holberton.h"
 
 /**
- * times_table- start
- *
- * Return: Always 0 (Success)
+ * times_table - Print the `n` times table, starting with 0.
+ * Description: If `n` is greater than 15 or less than 0, print nothing.
+ * @n: int type number
  */
-void times_table(void)
+void times_table(int n)
 {
-	int row, col, x;
+	int x = 0, y, z;
 
-	for (row = 0; row <= 9; row++)
+	if (n > 15 || n < 0)
+		return;
+	while (x <= n)
 	{
-		for (col = 0; col <= 9; col++)
+		for (y = 0; y <= n; y++)
 		{
-			if (col < 9)
+			z = x * y;
+			if (z > 99)
 			{
-				x = row * col;
-				if (x < 10 && x >= 0)
-				{
-					_putchar(x + '0');
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-				}
-				else
-				{
-					_putchar(x / 10 + '0');
-					_putchar(x % 10 + '0');
-					_putchar(',');
-					_putchar(' ');
-				}
+				_putchar(z / 100 + '0');
+				_putchar((z / 10 % 10) + '0');
+				_putchar(z % 10 + '0');
+			}
+			else if (z > 9)
+			{
+				_putchar(' ');
+				_putchar(z / 10 + '0');
+				_putchar(z % 10 + '0');
+			}
+			else if (y != 0)
+			{
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(z + '0');
 			}
 			else
+				_putchar(z + '0');
+
+			if (y != n)
 			{
-				x = row * col;
-				if (x < 10 && x >= 0)
-				{
-					_putchar(x + '0');
-					_putchar('\n');
-				}
-				else
-				{
-					_putchar(x / 10 + '0');
-					_putchar(x % 10 + '0');
-					_putchar('\n');
-				}
+				_putchar(',');
+				_putchar(' ');
 			}
 		}
+		_putchar('\n');
+		x++;
 	}
 }
