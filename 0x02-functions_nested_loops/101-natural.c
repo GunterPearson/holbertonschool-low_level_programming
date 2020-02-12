@@ -18,7 +18,7 @@
 
 int main(void)
 {
-	int i;
+	int i, j;
 
 	for (i = 1; i < 1025; i++)
 	{
@@ -27,6 +27,7 @@ int main(void)
 			if (i != 1023)
 			{
 				printf("%i, ", i);
+				
 			}
 			else
 				printf("%i\n", i);
