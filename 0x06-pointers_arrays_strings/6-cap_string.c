@@ -8,12 +8,32 @@
  */
 char *cap_string(char *s)
 {
-	int c;
-	for (c = 0; s[c] != '\0'; c++)
+	int i;
+
+	if (s[0] >= 'a' && s[0] <= 'z')
 	{
-		if (s[c] = *t)
+		s[0] -= 32;
+		for (i = 0; s[i] != '\0'; i++)
 		{
-			s[c] = s[c + 1] = s[c] -= 32;
+			switch (s[i])
+			{
+			case ',':
+			case ';':
+			case '.':
+			case '!':
+			case '?':
+			case '"':
+			case '(':
+			case ')':
+			case '{':
+			case '}':
+			case ' ':
+			case '\n':
+			case '\t':
+
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+					s[i + 1] -= 32;
+			}
 		}
 	}
 	return (s);
