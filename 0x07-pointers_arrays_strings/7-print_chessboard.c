@@ -3,7 +3,6 @@
 /**
  * print_chessboard - start of function
  * @a: place holder
- * @8: dimesnsions
  *
  * Return: void
  */
