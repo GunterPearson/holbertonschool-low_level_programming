@@ -3,14 +3,9 @@
 /**
  * _sqrt_recursion - start of sqrt funtion
  * @n: what is getting sqrt
- * @i: counting down from n
  *
  * Return: int
  */
-
-int _sqrt2(int i, int n);
-
-
 int _sqrt_recursion(int n)
 {
 	int i = n;
@@ -21,13 +16,13 @@ int _sqrt_recursion(int n)
 /**
  * _sqrt2 - start of 2nd function
  * @i: set equal to n
- * @n: number given
+ * @num: number given
  *
  * Return: int
  */
-int _sqrt2(int i, int n)
+int _sqrt2(int i, int num)
 {
-	if (i * i == n)
+	if (i * i == num)
 	{
 		return (i);
 	}
@@ -37,6 +32,6 @@ int _sqrt2(int i, int n)
 	}
 	else
 	{
-		return (_sqrt2((i - 1), n));
+		return (_sqrt2((i - 1), num));
 	}
 }
