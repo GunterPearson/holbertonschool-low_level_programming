@@ -22,6 +22,10 @@ int _sqrt_recursion(int n)
  */
 int _sqrt2(int i, int num)
 {
+	if (num % 10 == 0)
+	{
+		return (-1);
+	}
 	if (num == 0)
 	{
 		return (-1);
