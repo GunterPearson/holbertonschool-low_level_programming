@@ -23,6 +23,8 @@ int is_prime2(int i, int num);
 
 int is_palindrome(char *s);
 
-char *rev_string(char *s);
+int len(char *s);
+
+int check1(char *s, int b);
 
 #endif
