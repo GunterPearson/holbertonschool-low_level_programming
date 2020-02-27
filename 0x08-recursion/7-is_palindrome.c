@@ -37,6 +37,7 @@ int len(char *s)
  * check1 - checks to see if
  * s is a palindrome
  * @s: string tested
+ * @b: int passed for beg
  *
  * Return: int
  */
