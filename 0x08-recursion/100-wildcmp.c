@@ -26,7 +26,7 @@ int comp(char *f, char *s)
 	del(s);
 	if (*f == '\0' && *s != '\0')
 	{
-		return (0);
+		return (1);
 	}
 	if (*f == '\0' && *s == '\0')
 	{
