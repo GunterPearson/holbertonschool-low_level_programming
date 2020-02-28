@@ -27,4 +27,10 @@ int len(char *s);
 
 int check1(char *s, int b);
 
+int wildcmp(char *s1, char *s2);
+
+int comp(char *f, char *s);
+
+char *del(char *s);
+
 #endif
