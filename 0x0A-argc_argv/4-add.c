@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 }
 
 /**
- * _isint - start of funtion
+ * _natint - start of funtion
  * @s: string given
  *
  *
