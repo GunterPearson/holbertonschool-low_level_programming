@@ -10,7 +10,7 @@
  */
 int main(int argc, char **argv)
 {
-	int i = 0;
+	int i = 1;
 	int sum;
 
 	if (argc == 1)
@@ -20,7 +20,7 @@ int main(int argc, char **argv)
 	}
 	while (i < argc)
 	{
-		if (atoi(argv[i]) >= '0')
+		if (_natint(argv[i]) == 0)
 		{
 			sum += atoi(argv[i]);
 		}
@@ -32,5 +32,27 @@ int main(int argc, char **argv)
 		i++;
 	}
 	printf("%d\n", sum);
+	return (0);
+}
+
+/**
+ * _isint - start of funtion
+ * @s: string given
+ *
+ *
+ * Return: int
+ */
+int _natint(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		if (!((s[i] >= '0') && (s[i] <= '9')))
+		{
+			return (1);
+		}
+		i++;
+	}
 	return (0);
 }
