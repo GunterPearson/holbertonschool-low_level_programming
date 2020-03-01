@@ -3,4 +3,6 @@
 
 int _putchar(char c);
 
+int _natint(char *s);
+
 #endif
