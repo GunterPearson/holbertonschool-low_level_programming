@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	int tot, count;
 	unsigned int i;
 	char *p;
-	int cents[] = {25, 10, 5, 1};
+	int cents[] = {25, 10, 5, 2};
 
 	if (argc != 2)
 	{
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
 	if (!*p)
 	{
-		while (tot > 0)
+		while (tot > 1)
 		{
 			for (i = 0; i < 4; i++)
 			{
@@ -38,6 +38,8 @@ int main(int argc, char *argv[])
 				}
 			}
 		}
+		if (tot == 1)
+			count++;
 	}
 	else
 	{
