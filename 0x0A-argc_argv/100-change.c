@@ -10,7 +10,6 @@
  */
 int main(int argc, char **argv)
 {
-	int i = 0;
 	int sub;
 
 	if (argc != 2)
@@ -20,8 +19,8 @@ int main(int argc, char **argv)
 	}
 	if (_natint(argv[1]) == 1)
 	{
-		printf("0\n");
-		return (0);
+		printf("Error\n");
+		return (1);
 	}
 	if (atoi(argv[1]) < 0)
 	{
@@ -31,27 +30,7 @@ int main(int argc, char **argv)
 	sub = atoi(argv[1]);
 	if (sub > 0)
 	{
-		while (sub - 25 >= 0)
-		{
-			sub -= 25;
-			i++;
-		}
-		while (sub - 10 >= 0)
-		{
-			sub -= 10;
-			i++;
-		}
-		while (sub - 5 >= 0)
-		{
-			sub -= 5;
-			i++;
-		}
-		while (sub - 1 >= 0)
-		{
-			sub -= 1;
-			i++;
-		}
-		printf("%d\n", i);
+		printf("%d\n", subtraction(sub));
 		return (0);
 	}
 	return (0);
@@ -78,4 +57,37 @@ int _natint(char *s)
 		i++;
 	}
 	return (0);
+}
+
+/**
+ * subtraction - start of function
+ * @sub: int being subtracted
+ *
+ * Return: int
+ */
+int subtraction(int sub)
+{
+	int i = 0;
+
+	while (sub - 25 >= 0)
+	{
+		sub -= 25;
+		i++;
+	}
+	while (sub - 10 >= 0)
+	{
+		sub -= 10;
+		i++;
+	}
+	while (sub - 5 >= 0)
+	{
+		sub -= 5;
+		i++;
+	}
+	while (sub - 1 >= 0)
+	{
+		sub -= 1;
+		i++;
+	}
+	return (i);
 }
