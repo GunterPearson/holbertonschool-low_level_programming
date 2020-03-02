@@ -1,93 +1,50 @@
 #include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
+
 /**
- * main - start of program
- * @argc: counts arguments
- * @argv: contains arguments given
- *
+ * main - start of change program
+ * @argc: argument count
+ * @argv: actual arguments
  * Return: int
  */
-int main(int argc, char **argv)
+
+int main(int argc, char *argv[])
 {
-	int sub;
+	int tot, count;
+	unsigned int i;
+	char *p;
+	int cents[] = {25, 10, 5, 1};
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	if (_natint(argv[1]) == 1)
+
+	tot = strtol(argv[1], &p, 10);
+	count = 0;
+
+	if (!*p)
+	{
+		while (tot > 0)
+		{
+			for (i = 0; i < 4; i++)
+			{
+				if (tot >= cents[i])
+				{
+					count += tot / cents[i];
+					tot = tot % cents[i];
+				}
+			}
+		}
+	}
+	else
 	{
 		printf("Error\n");
 		return (1);
 	}
-	if (atoi(argv[1]) < 0)
-	{
-		printf("0\n");
-		return (0);
-	}
-	sub = atoi(argv[1]);
-	if (sub > 0)
-	{
-		printf("%d\n", subtraction(sub));
-		return (0);
-	}
+
+	printf("%d\n", count);
 	return (0);
-}
-
-
-/**
- * _natint - start of funtion
- * @s: string given
- *
- *
- * Return: int
- */
-int _natint(char *s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		if (!((s[i] >= '0') && (s[i] <= '9')))
-		{
-			return (1);
-		}
-		i++;
-	}
-	return (0);
-}
-
-/**
- * subtraction - start of function
- * @sub: int being subtracted
- *
- * Return: int
- */
-int subtraction(int sub)
-{
-	int i = 0;
-
-	while (sub - 25 >= 0)
-	{
-		sub -= 25;
-		i++;
-	}
-	while (sub - 10 >= 0)
-	{
-		sub -= 10;
-		i++;
-	}
-	while (sub - 5 >= 0)
-	{
-		sub -= 5;
-		i++;
-	}
-	while (sub - 1 >= 0)
-	{
-		sub -= 1;
-		i++;
-	}
-	return (i);
 }
