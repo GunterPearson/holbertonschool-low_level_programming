@@ -19,8 +19,8 @@ int main(int argc, char **argv)
 	}
 	if (_natint(argv[1]) == 1)
 	{
-		printf("Error\n");
-		return (1);
+		printf("0\n");
+		return (0);
 	}
 	if (atoi(argv[1]) < 0)
 	{
