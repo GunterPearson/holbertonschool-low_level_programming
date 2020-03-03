@@ -10,13 +10,13 @@
  */
 char *str_concat(char *s1, char *s2)
 {
-	char *s;
-	int i = 0, j = 0;
+	char *s = NULL;
+	int i, j;
 
-	s = malloc(2 * sizeof(char *));
+	s = malloc(sizeof(char *));
 	if (s == NULL)
 	{
-		return (NULL);
+		return (s);
 	}
 	if (s1 != NULL)
 	{
@@ -32,5 +32,6 @@ char *str_concat(char *s1, char *s2)
 			s[i] = s2[j];
 		}
 	}
+	s[i] = '\0';
 	return (s);
 }
