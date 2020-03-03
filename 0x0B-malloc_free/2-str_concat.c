@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "holberton.h"
 #include <stdlib.h>
 /**
@@ -21,7 +20,7 @@ char *str_concat(char *s1, char *s2)
 		;
 	for (os = 0; s2[os]; os++)
 		;
-	s = malloc(ss + os * sizeof(char *));
+	s = malloc((ss + os + 1) * sizeof(char));
 	if (s == NULL)
 	{
 		return (s);
@@ -34,6 +33,5 @@ char *str_concat(char *s1, char *s2)
 	{
 		s[i] = s2[j];
 	}
-	s[i] = '\0';
 	return (s);
 }
