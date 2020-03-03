@@ -13,4 +13,6 @@ int **alloc_grid(int width, int height);
 
 int* create(int cols);
 
+void free_grid(int **grid, int height);
+
 #endif
