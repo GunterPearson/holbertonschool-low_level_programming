@@ -11,14 +11,7 @@
 int **alloc_grid(int width, int height)
 {
 	int **m = malloc(height * sizeof(int *));
-	int *a = create(width);
-        int *b = create(width);
-        int *c = create(width);
-        int *d = create(width);
-        m[0] = a;
-        m[1] = b;
-        m[2] = c;
-        m[3] = d;
+	int i, *s;
 
 	if (width <= 0 || height <= 0)
 	{
@@ -27,6 +20,10 @@ int **alloc_grid(int width, int height)
 	if (m == NULL)
 	{
 		return (NULL);
+	}
+	for (i = 0; i < height; i++)
+	{
+		m[i] = (s = create(width));
 	}
 	return (m);
 }
@@ -39,11 +36,11 @@ int **alloc_grid(int width, int height)
 int *create(int cols)
 {
 	int i;
-        int *p = malloc(cols * sizeof(int));
+	int *p = malloc(cols * sizeof(int));
 
-        for (i = 0; i < cols; i++)
-        {
-                p[i] = 0;
-        }
-        return (p);
+	for (i = 0; i < cols; i++)
+	{
+		p[i] = 0;
+	}
+	return (p);
 }
