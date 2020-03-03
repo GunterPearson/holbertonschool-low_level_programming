@@ -1,7 +1,7 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
- * _stdrup - start of function
+ * _strdup - start of function
  * @str: string we are given to copy
  *
  * Return: new pointer allocated
@@ -15,7 +15,7 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	nstr = malloc(sizeof(char*));
+	nstr = malloc(sizeof(char *));
 	if (nstr == NULL)
 	{
 		return (NULL);

@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	int tot, count;
 	unsigned int i;
 	char *p;
-	int cents[] = {25, 10, 5, 2};
+	int cents[] = {25, 10, 5, 1};
 
 	if (argc != 2)
 	{
@@ -24,10 +24,11 @@ int main(int argc, char *argv[])
 
 	tot = strtol(argv[1], &p, 10);
 	count = 0;
-
+	printf("pointer p address: %p\n", p);
+	printf("pointer p contains: %d\n", *p);
 	if (!*p)
 	{
-		while (tot > 1)
+		while (tot > 0)
 		{
 			for (i = 0; i < 4; i++)
 			{
@@ -38,8 +39,6 @@ int main(int argc, char *argv[])
 				}
 			}
 		}
-		if (tot == 1)
-			count++;
 	}
 	else
 	{

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * alloc_grid _ start of function
+ * alloc_grid - start of function
  * @width: cols
  * @height: rows
  *
@@ -10,14 +10,14 @@
  */
 int **alloc_grid(int width, int height)
 {
-        int **m = malloc(height * sizeof(int*));
-        int i, *s;
+	int **m = malloc(height * sizeof(int *));
+	int i, *s;
 
-        for (i = 0; i < height; i++)
-        {
-                m[i] = (s = create(width));
-        }
-        return (m);
+	for (i = 0; i < height; i++)
+	{
+		m[i] = (s = create(width));
+	}
+	return (m);
 }
 /**
  * create - start of function
