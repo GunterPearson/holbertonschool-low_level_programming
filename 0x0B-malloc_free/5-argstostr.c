@@ -11,7 +11,7 @@
 char *argstostr(int ac, char **av)
 {
 	int i;
-	int size = 1;
+	unsigned int size = 1;
 	char *o = NULL;
 	char *tmp = NULL;
 	char *a;
@@ -53,9 +53,9 @@ char *argstostr(int ac, char **av)
  */
 char *cat(char *t, char *g)
 {
-	int i, j;
-	int c = 0;
-	int h = count(t) + count(g) + 2;
+	unsigned int i, j;
+	unsigned int c = 0;
+	unsigned int h = count(t) + count(g) + 2;
 	char *r = malloc(h * sizeof(char));
 
 	for (i = 0; t[i]; i++)
@@ -77,9 +77,9 @@ char *cat(char *t, char *g)
  *
  * Return: returns an int
  */
-int count(char *argv)
+unsigned int count(char *argv)
 {
-	int i;
+	unsigned int i;
 
 	for (i = 0; argv[i]; i++)
 		;

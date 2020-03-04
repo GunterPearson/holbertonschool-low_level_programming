@@ -19,6 +19,6 @@ char *argstostr(int ac, char **av);
 
 char *cat(char *t, char *g);
 
-int count(char *argv);
+unsigned int count(char *argv);
 
 #endif
