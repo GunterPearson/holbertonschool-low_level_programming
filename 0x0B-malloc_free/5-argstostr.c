@@ -20,6 +20,8 @@ char *argstostr(int ac, char **av)
 		return (NULL);
 	if (ac == 1)
 		return (av[1]);
+	if (av == NULL)
+		return (NULL);
 	o = malloc(size);
 	if (o == NULL)
 	{
