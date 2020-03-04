@@ -60,8 +60,6 @@ char *cat(char *t, char *g)
 	unsigned int h = count(t) + count(g) + 2;
 	char *r = malloc(h * sizeof(char));
 
-	if (t == NULL || g == NULL)
-		return (NULL);
 	if (r == NULL)
 	{
 		free(r);
