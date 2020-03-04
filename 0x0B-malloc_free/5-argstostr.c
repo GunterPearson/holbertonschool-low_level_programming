@@ -16,6 +16,10 @@ char *argstostr(int ac, char **av)
 	char *tmp = NULL;
 	char *a;
 
+	if (ac == 0)
+		return (NULL);
+	if (ac == 1)
+		return (av[1]);
 	o = malloc(size);
 	if (o == NULL)
 	{
