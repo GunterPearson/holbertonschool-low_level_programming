@@ -24,24 +24,16 @@ char *argstostr(int ac, char **av)
 	}
 	for (i = 0; i < ac; i++)
 	{
-		if (av[i] != NULL || av[i] != 0)
+		size += (count(av[i]) + 1);
+		tmp = realloc(o, size);
+		if (tmp == NULL)
 		{
-			size += (count(av[i]) + 1);
-			tmp = realloc(o, size);
+			free(tmp);
+			return (NULL);
 		}
 		o = tmp;
 		o = cat(o, av[i]);
-		if (o != NULL && tmp != NULL)
-		{
-			a = o;
-		}
-		else
-		{
-			free(tmp);
-			free(av[i]);
-			free(o);
-			return (NULL);
-		}
+		a = o;
 	}
 	return (a);
 }
