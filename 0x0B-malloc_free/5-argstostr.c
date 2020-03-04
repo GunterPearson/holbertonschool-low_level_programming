@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "holberton.h"
 /**
@@ -30,7 +31,7 @@ char *argstostr(int ac, char **av)
 		{
 			return (NULL);
 		}
-		size += count(av[i]);
+		size += (count(av[i]) + 1);
 		tmp = realloc(o, size);
 		if (tmp == NULL)
 		{
@@ -38,9 +39,9 @@ char *argstostr(int ac, char **av)
 		}
 		o = tmp;
 		o = cat(o, av[i]);
-		a = cat(o, av[i]);
+		a = o;
 	}
-      	return (a);
+	return (a);
 }
 
 /**
@@ -54,18 +55,18 @@ char *cat(char *t, char *g)
 {
 	int i, j;
 	int c = 0;
-	int h = count(t) + count(g) + 1;
+	int h = count(t) + count(g) + 2;
 	char *r = malloc(h * sizeof(char));
 
 	for (i = 0; t[i]; i++)
 	{
 		r[i] = t[i];
 	}
-	r[i] = '\n';
-	for (j = i + 1; j < (count(t) + count(g)); j++)
+	for (j = i; j < (count(t) + count(g)); j++)
 	{
 		r[j] = g[c++];
 	}
+	r[j] = '\n';
 	r[h - 1] = '\0';
 	return (r);
 }
