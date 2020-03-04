@@ -17,14 +17,14 @@ char *argstostr(int ac, char **av)
 	char *a;
 
 	o = malloc(size);
-	if (o == NULL || ac == 1)
+	if (o == NULL)
 	{
 		free(o);
 		return (NULL);
 	}
 	for (i = 0; i < ac; i++)
 	{
-		if (av[i] != NULL)
+		if (av[i] != NULL || av[i] != 0)
 		{
 			size += (count(av[i]) + 1);
 			tmp = realloc(o, size);
@@ -60,6 +60,8 @@ char *cat(char *t, char *g)
 	unsigned int h = count(t) + count(g) + 2;
 	char *r = malloc(h * sizeof(char));
 
+	if (t == NULL || g == NULL)
+		return (NULL);
 	if (r == NULL)
 	{
 		free(r);
