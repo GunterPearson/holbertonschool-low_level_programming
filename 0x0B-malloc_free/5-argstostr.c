@@ -10,70 +10,35 @@
  */
 char *argstostr(int ac, char **av)
 {
-	int i;
-	unsigned int size = 1;
-	char *o = NULL;
-	char *tmp = NULL;
-	char *a;
+	int per = 0;
+	int i = 0, j = 0, k = 0, w = 0;
+	char *s;
 
-	if (ac == 0)
-		return (NULL);
-	if (ac == 1)
-		return (av[1]);
-	if (av == NULL)
-		return (NULL);
-	o = malloc(size);
-	if (o == NULL)
+	if (ac == 0 || av == NULL)
 	{
-		free(o);
 		return (NULL);
 	}
 	for (i = 0; i < ac; i++)
 	{
-		size += (count(av[i]) + 1);
-		tmp = realloc(o, size);
-		if (tmp == NULL)
-		{
-			free(tmp);
-			return (NULL);
-		}
-		o = tmp;
-		o = cat(o, av[i]);
-		a = o;
+		w += count(av[i]) + 1;
 	}
-	return (a);
-}
-
-/**
- * cat - start of function
- * @t: pointer taking strings
- * @g: pointer giving strings
- *
- * Return: char pointer
- */
-char *cat(char *t, char *g)
-{
-	unsigned int i, j;
-	unsigned int c = 0;
-	unsigned int h = count(t) + count(g) + 2;
-	char *r = malloc(h * sizeof(char));
-
-	if (r == NULL)
+	s = (char *) malloc(sizeof(char) * w + 1);
+	if (s == NULL)
 	{
-		free(r);
+		free(s);
 		return (NULL);
 	}
-	for (i = 0; t[i]; i++)
+	for (i = 0; i < ac; i++)
 	{
-		r[i] = t[i];
+		k = count(av[i]);
+		for (j = 0; j < k; j++, per++)
+		{
+			s[per] = av[i][j];
+		}
+		s[per++] = '\n';
 	}
-	for (j = i; j < (count(t) + count(g)); j++)
-	{
-		r[j] = g[c++];
-	}
-	r[j] = '\n';
-	r[h - 1] = '\0';
-	return (r);
+	s[per] = '\0';
+	return (s);
 }
 
 /**
@@ -82,9 +47,9 @@ char *cat(char *t, char *g)
  *
  * Return: returns an int
  */
-unsigned int count(char *argv)
+int count(char *argv)
 {
-	unsigned int i;
+	int i;
 
 	for (i = 0; argv[i]; i++)
 		;
