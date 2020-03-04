@@ -51,6 +51,11 @@ int *create(int cols)
 	int i;
 	int *p = malloc(cols * sizeof(int));
 
+	if (p == NULL)
+	{
+		free(p);
+		return (NULL);
+	}
 	for (i = 0; i < cols; i++)
 	{
 		p[i] = 0;

@@ -16,30 +16,32 @@ char *argstostr(int ac, char **av)
 	char *tmp = NULL;
 	char *a;
 
-	if (ac == 1)
-	{
-		return (NULL);
-	}
 	o = malloc(size);
-	if (o == NULL)
+	if (o == NULL || ac == 1)
 	{
+		free(o);
 		return (NULL);
 	}
 	for (i = 0; i < ac; i++)
 	{
-		if (av[i] == NULL)
+		if (av[i] != NULL)
 		{
-			return (NULL);
-		}
-		size += (count(av[i]) + 1);
-		tmp = realloc(o, size);
-		if (tmp == NULL)
-		{
-			return (NULL);
+			size += (count(av[i]) + 1);
+			tmp = realloc(o, size);
 		}
 		o = tmp;
 		o = cat(o, av[i]);
-		a = o;
+		if (o != NULL && tmp != NULL)
+		{
+			a = o;
+		}
+		else
+		{
+			free(tmp);
+			free(av[i]);
+			free(o);
+			return (NULL);
+		}
 	}
 	return (a);
 }
@@ -58,6 +60,11 @@ char *cat(char *t, char *g)
 	unsigned int h = count(t) + count(g) + 2;
 	char *r = malloc(h * sizeof(char));
 
+	if (r == NULL)
+	{
+		free(r);
+		return (NULL);
+	}
 	for (i = 0; t[i]; i++)
 	{
 		r[i] = t[i];
