@@ -19,4 +19,12 @@ char *argstostr(int ac, char **av);
 
 int count(char *argv);
 
+char **strtow(char *str);
+
+int cont(char *a, int i);
+
+int nospace(char *p);
+
+int word(char *str);
+
 #endif

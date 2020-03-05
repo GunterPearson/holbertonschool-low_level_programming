@@ -12,7 +12,7 @@
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i = 0, j = 0;
-	char *returning;
+	char *back;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -22,34 +22,34 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	j = _stlen(s2);
 	if (n >= j)
 	{
-		returning = malloc(i + j + 1);
-		if (returning == NULL)
+		back = malloc(i + j + 1);
+		if (back == NULL)
 			return (NULL);
 	}
 	if (j > n)
 	{
-		returning = malloc(i + n + 1);
-		if (returning == NULL)
+		back = malloc(i + n + 1);
+		if (back == NULL)
 			return (NULL);
 	}
 	for (i = 0; s1[i]; i++)
-		returning[i] = s1[i];
+		back[i] = s1[i];
 	if (n >= j)
 	{
 		for (j = 0; s2[j]; j++, i++)
-			returning[i] = s2[j];
-		returning[i] = '\0';
+			back[i] = s2[j];
+		back[i] = '\0';
 	}
 	if (j > n)
 	{
 		for (j = 0; j < n; j++, i++)
-			returning[i] = s2[j];
-		returning[i] = '\0';
+			back[i] = s2[j];
+		back[i] = '\0';
 	}
-	return (returning);
+	return (back);
 }
 /**
- * strlen - counter for strlen
+ * _stlen - counter for strlen
  * @s: string given to count
  *
  * Return: int
