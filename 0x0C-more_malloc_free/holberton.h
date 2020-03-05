@@ -11,4 +11,6 @@ unsigned int _stlen(char *s);
 
 int stlen(char *s);
 
+void *_calloc(unsigned int nmemb, unsigned int size);
+
 #endif
