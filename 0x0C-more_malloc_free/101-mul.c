@@ -10,55 +10,93 @@
  */
 int main(int argc, char **argv)
 {
-	int i;
-	char *checkone, *checktwo;
-	int *first, *second, *total;
+	int t, i, j, len1, len2, currentp, totallen, over;
+	int *answer;
 
-	if (argc != 3)
+	if (argc != 3 || !(num(argv[1])) || !(num(argv[2])))
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	first = malloc(sizeof(int) * stlen(argv[1]));
-	if (first == NULL)
-		exit(98);
-	second = malloc(sizeof(int) * stlen(argv[2]));
-	if (second == NULL)
-		exit(98);
-	*first = strtol(argv[1], &checkone, 10);
-	*second = strtol(argv[2], &checktwo, 10);
-	if (!*checkone && !*checktwo)
-	{
-		total = malloc(sizeof(int) * 100);
-		if (total == NULL)
-			exit(98);
-		*total = *first * *second;
-		printf("%i\n", *total);
-		free(total);
-		free(first);
-		free(second);
-	}
-	else
+	len1 = _strlen(argv[1]);
+	len2 = _strlen(argv[2]);
+	totallen = len1 + len2;
+	answer = malloc(sizeof(int *) * totallen);
+	if (answer == NULL)
 	{
 		printf("Error\n");
-		free(first);
-		free(second);
 		exit(98);
 	}
+	for (i = len2 - 1; i > -1; i--)
+	{
+		over = 0;
+		for (j = len1 - 1; j > -1; j--)
+		{
+			currentp = (argv[2][i] - '0') * (argv[1][j] - '0');
+			over = (currentp / 10);
+			answer[(i + j) + 1] += (currentp % 10);
+			if (answer[(i + j) + 1] > 9)
+			{
+				answer[i + j] += answer[(i + j) + 1] / 10;
+				answer[(i + j) + 1] = answer[(i + j) + 1] % 10;
+			}
+			answer[(i + j)] += over;
+		}
+	}
+	ifans(answer, totallen);
 	return (0);
 }
-
 /**
- * stlen - start of funtion
- * @p: string being counted
+ * ifans - start of funtion
+ * @answer: string given
+ * @t: represents total len
+ *
+ * Return: void
+ */
+void ifans(int *answer, int t)
+{
+	int i;
+
+	if (answer[0] == 0)
+		i = 1;
+	else
+		i = 0;
+	for (i; i < t; i++)
+		printf("%d", answer[i]);
+	printf("\n");
+	free(answer);
+}
+/**
+ * num - start of function
+ * @num: string given to check
  *
  * Return: int
  */
-long long stlen(char *p)
+int num(char *num)
 {
-	long long i;
+	int i;
 
-	for (i = 0; p[i]; p++)
-		;
+	for (i = 0; num[i]; i++)
+	{
+		if (num[i] < '0' || num[i] > '9')
+			return (0);
+	}
+	return (1);
+}
+
+
+/**
+ * _strlen - start of funtion
+ * @s: string being counted
+ *
+ * Return: int
+ */
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i])
+		++i;
 	return (i);
 }

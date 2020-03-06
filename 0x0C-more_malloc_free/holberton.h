@@ -17,4 +17,14 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 
 long long stlen(char *p);
 
+void *_memset(void *s, int b, unsigned int n);
+
+int _isNum(char *num);
+
+int _strlen(char *s);
+
+int num(char *num);
+
+void ifans(int *answer, int t);
+
 #endif
