@@ -21,6 +21,11 @@ int main(int argc, char **argv)
 	len1 = _strlen(argv[1]);
 	len2 = _strlen(argv[2]);
 	totallen = len1 + len2;
+	if (argv[1][0] == '0' || argv[2][0] == '0')
+	{
+		printf("0\n");
+		return (0);
+	}
 	answer = malloc(sizeof(int *) * totallen);
 	if (answer == NULL)
 	{
