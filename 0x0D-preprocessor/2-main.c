@@ -2,15 +2,12 @@
 #include <stdio.h>
 /**
  * main - start of program
- * @argc: count of arguments
- * @argv: arguments given
  *
  * Return: int
  */
-int main(int argc, char **argv)
+int main(void)
 {
-	(void) argc;
-	puts(argv[0]);
+	puts(__FILE__);
 
 	return (0);
 }
