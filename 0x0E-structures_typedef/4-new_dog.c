@@ -47,6 +47,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 void _copy(char *f, char *s)
 {
 	int i = 0;
+
 	while (s[i])
 	{
 		f[i] = s[i];
@@ -63,6 +64,7 @@ void _copy(char *f, char *s)
 int _strlen(char *p)
 {
 	int i = 0;
+
 	while (p[i])
 		i++;
 	return (i);
