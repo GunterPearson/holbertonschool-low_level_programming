@@ -19,10 +19,10 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 	if (ans == NULL)
-        {
-                printf("Error\n");
-                exit(99);
-        }
+	{
+		printf("Error\n");
+		exit(99);
+	}
 	if ((!(strcmp(argv[2], "%")) || !(strcmp(argv[2], "/"))) &&
 	    (atoi(argv[3]) == 0))
 	{
