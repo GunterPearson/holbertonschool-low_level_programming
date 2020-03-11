@@ -1,4 +1,3 @@
-#ifndef ABSOLUTE
-#define ABSOLUTE
+#ifndef ABS
 #define ABS(x) ((x < 0) ? -(x) : (x))
-#endif /* ABSOULUTE already defined */
+#endif /* ABSOLUTE already defined */
