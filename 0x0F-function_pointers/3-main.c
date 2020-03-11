@@ -1,3 +1,4 @@
+#include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include "3-calc.h"
@@ -10,40 +11,24 @@
  */
 int main(int argc, char **argv)
 {
-	int (*ans)(int a, int b);
-	char *oper;
-	char comp;
-	int a, b;
+	int (*ans)(int a, int b) = get_op_func(argv[2]);
 
-	if (argc != 4)
+	if (argc != 4 || argv == NULL)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	oper = argv[2];
-	comp = argv[2][0];
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
-	if (comp != '+' && comp != '-' && comp != '*' && comp != '/'
-	    && comp != '%' && argv[2][1] != '\0')
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	if (comp == '/' || comp == '%')
-	{
-		if (a == 0 || b == 0)
-		{
-			printf("Error\n");
-			exit(100);
-		}
-	}
-	ans = get_op_func(oper);
 	if (ans == NULL)
+        {
+                printf("Error\n");
+                exit(99);
+        }
+	if ((!(strcmp(argv[2], "%")) || !(strcmp(argv[2], "/"))) &&
+	    (atoi(argv[3]) == 0))
 	{
 		printf("Error\n");
-		exit(99);
+		exit(100);
 	}
-	printf("%d\n", ans(a, b));
+	    printf("%d\n", ans(atoi(argv[1]), atoi(argv[3])));
 	return (0);
 }
