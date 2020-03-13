@@ -1,0 +1,1 @@
+first use/intro to variadic funtions.
