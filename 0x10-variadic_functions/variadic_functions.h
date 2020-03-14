@@ -1,6 +1,7 @@
 #ifndef VARIADIC
 #define VARIADIC
 #include <stdarg.h>
+#include <stdio.h>
 
 int _putchar(char c);
 
