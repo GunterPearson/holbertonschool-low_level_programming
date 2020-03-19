@@ -22,6 +22,12 @@ typedef struct list_s
 
 
 
+unsigned int _strlen(const char *str);
+
+char *_strcpy(const char *str);
+
+list_t *add_node(list_t **head, const char *str);
+
 int _putchar(char c);
 
 size_t print_list(const list_t *h);
