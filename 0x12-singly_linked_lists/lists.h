@@ -21,6 +21,8 @@ typedef struct list_s
 } list_t;
 
 
+void free_list(list_t *head);
+
 list_t *add_node_end(list_t **head, const char *str);
 
 unsigned int _strlen(const char *str);
