@@ -10,7 +10,7 @@ int main(int argc, char **argv)
 {
 	int fd, fd_t, r = 1, w = 1;
 	char buff[1024];
-	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	mode_t mode = 00664;
 
 	if (argc != 3)
 	{
