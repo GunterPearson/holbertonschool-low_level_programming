@@ -24,4 +24,6 @@ size_t dlistint_len(dlistint_t *head);
 
 size_t print_dlistint(dlistint_t *head);
 
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
+
 #endif
