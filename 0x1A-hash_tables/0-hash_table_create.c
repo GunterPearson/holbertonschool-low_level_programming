@@ -21,5 +21,6 @@ hash_table_t *hash_table_create(unsigned long int size)
 		hash->array[x] = NULL;
 		x++;
 	}
+	hash->size = size;
 	return (hash);
 }
