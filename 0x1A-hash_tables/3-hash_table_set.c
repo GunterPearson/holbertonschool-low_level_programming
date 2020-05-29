@@ -35,12 +35,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	node->value = strdup(value);
 	node->next = NULL;
 	check = ht->array[index];
-	if (ht->array[index] == NULL)
-		ht->array[index] = node;
+	if (check == NULL)
+		check = node;
 	else
 	{
-		node->next = ht->array[index];
-		ht->array[index] = node;
+		node->next = check;
+		check = node;
 	}
 	return (1);
 }
